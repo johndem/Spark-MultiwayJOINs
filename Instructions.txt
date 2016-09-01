@@ -1,0 +1,16 @@
+Tο project χτίστηκε στα Windows μέσω του Eclipse Scala IDE και στη συνέχεια ο κώδικας έγινε compile με sbt σε ubuntu με scala 2.10.4 και SPARK 1.4.1, από όπου και παρήχθηκε το jar.
+
+Το πρόγραμμα τρέχει τα 3 ερωτήματα σειριακά και εμφανίζει στην έξοδο τον χρόνο εκτέλεσης για το καθένα καθώς και το πλήθος των αποτελεσμάτων
+ενώ στο 3ο ερώτημα και την κατανομή των reducers. Κάθε ερώτημα βγάζει σε έναν ξεχωριστό φάκελο την έξοδό του δηλαδή το αποτέλεσμα του join. Οι 3 αυτοί 
+φάκελοι δίνονται με τη σειρά σαν ορίσματα του jar αμέσως μετά τo αρχείο εισόδου.
+
+Το jar το έτρεξα μέσω της εντολής:
+bin/spark-submit --class "Join" --master local  [path_to_jar] [path_to_inputfile] [path_to_outputfolder1] [path_to_outputfolder2] [path_to_outputfolder3] [αριθμός reducer]
+
+όπου σε μένα [path_to_jar]= /home/john/spark/examples/spark/john/target/scala-2.10/join_2.10-1.0.jar
+και το object που περιέχει τη main function μου έχει το όνομα Join, εξ ου και το --class "Join"
+
+Σαν παραδοτέο σας στέλνω και ένα txt αρχείο που χρησιμοποίησα για να τεστάρω το πρόγραμμα.
+Το κύριο αρχείο κώδικα είναι το JoinAssignment.scala ενώ χρησιμοποιείται και το Partitioner.scala από την main αντιπροσωπεύοντας έναν reducer στην υλοποίηση.
+
+Στο ερώτημα της SQL χρησιμοποιήθηκε ο default αριθμός partitioning.
