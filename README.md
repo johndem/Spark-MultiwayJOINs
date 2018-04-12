@@ -3,7 +3,7 @@ Perform 4 JOIN operations utilizing Spark's distributed environment.
 
 The four relations under process are of this nature: R(a,b,c,value), A(a,x), B(b,y), C(c,z).
 
-The JOIN operation is performed in three ways:
+The JOIN operation is performed using Scala in three ways:
 
 1. Transform the relation into RDDs (key,value) and use three binary join operations.
 
